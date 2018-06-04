@@ -2415,9 +2415,9 @@
 				border-top: 0;
 			}
 
-	.image {
+	/*.image {
 		box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #e6e6e6;
-	}
+	}*/
 
 		.image.phone {
 			box-shadow: none;
@@ -3760,9 +3760,9 @@
 		#header .image {
 			border-radius: 50%;
 			width: 200px;
-			height: 200px;
+			/*height: 200px;*/
 
-			margin-bottom: 15px;
+			margin-bottom: 80px;
 
 
 			/*box-shadow: 0 0 0 4px #4696e5, 0 0 0 5px rgba(255, 255, 255, 0.25);*/
