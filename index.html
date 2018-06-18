@@ -23,13 +23,41 @@
 
 
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<link rel="stylesheet" href="assets/css/main.min.css" />
 
 
 
 	</head>
 	<body id="top">
+      <!-- Navbar -->
+        <div id="mynavBar" class="navBar" display="none">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <ul class="navBar-list" type=none>
+
+
+          <li class="navBar-item selected"><a href="#header">Home</a></li>
+          <li class="navBar-item"><a href="#one">About</a></li>
+          <li class="navBar-item"><a href="#two">Blogs</a></li>
+          <li class="navBar-item"><a href="#three">Connect</a></li>
+        </ul>
+        </div>
+
+        <div id="mainNav">
+
+            <div class="openbtn" onclick="openNav()">
+
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+            </div>
+
+        </div>
+
 
 		<!-- Header -->
 			<header id="header">
@@ -50,7 +78,7 @@
 				</header>
 
     <div class="container">
-    
+
     <p >Hey, I am Priyanka. I am a recent graduate from Miranda House, University of Delhi with a degree in Computer Science. I have worked/interned with over 3 startups including <a href="http://www.mobiquel.com/" target="_blank">Mobiquel</a>. I am modest, but hard working and I consistently set firm goals for myself. I am an initiative taker with strong logical and analytical skills. I have a need to produce results with the ability to work individually as well as in a team.</p>
 
     <p >My interests are Open Source, Web Applications, Mobile Applications Development, Data Analytics, Machine Learning Virtual and Augmented Reality</p>
@@ -58,7 +86,7 @@
     <p >I am looking for opportunities in Machine  Learning, Artificial Intelligence and Web Development. Contact for resume!</p>
     <br>
     <br>
-    
+
     </div>
 			</section>
 
@@ -129,6 +157,46 @@
 			</footer>
 
 		<!-- Scripts -->
+            <script>
+                var openbtn = document.querySelector(".openbtn");
+                var closebtn = document.querySelector(".closebtn");
+                var listItems = document.querySelectorAll(".navBar-item");
+                for(var i=0;i<listItems.length;i++){
+
+                    listItems[i].addEventListener("click", function(){
+                        for(var j=0;j<listItems.length;j++){
+                            listItems[j].classList.remove("selected");
+                        }
+                        this.classList.add("selected");
+                        closeNav();
+                    });
+                }
+
+                function openNav() {
+                    openbtn.classList.add("is-active");
+                    closebtn.classList.add("is-active");
+                    document.getElementById("mynavBar").style.height = "290px";
+                    document.body.style = "overflow: hidden";
+                    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+
+                }
+
+                function closeNav() {
+
+                    document.getElementById("mynavBar").style.height = "0";
+                    closebtn.classList.remove("is-active");
+                    openbtn.classList.remove("is-active");
+                    /*document.body.style.backgroundColor = "white";*/
+                    document.body.style = "overflow: auto";
+
+                }
+                window.addEventListener("resize", function() {
+                    if (!(window.matchMedia("(max-width: 1060px)").matches)) {
+                        closeNav();
+                    }
+                });
+
+                </script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
